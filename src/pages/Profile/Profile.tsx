@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaHome, FaMusic, FaUser, FaSignOutAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
