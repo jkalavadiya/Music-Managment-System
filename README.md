@@ -30,6 +30,32 @@ A modern web application built with React.js and Node.js for managing music coll
     yarn dev
     ```
 
+## Login Credentials
+
+Default login credentials for testing:
+
+-   Username: emilys
+-   Password: emilyspass
+
+## Available Modules
+
+The system includes the following main modules:
+
+1. **Authentication Module**
+
+    - User login and registration
+    - Session management
+
+2. **Songs Module**
+
+    - Browse and search songs
+    - View song details
+    - Manage song metadata
+
+3. **Playlist Module**
+    - Create and manage playlists
+    - Add/remove songs from playlists
+
 ## Development
 
 This project uses Vite for fast development with HMR (Hot Module Replacement) and includes ESLint for code quality.
