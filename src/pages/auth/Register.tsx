@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import './auth.css';
@@ -12,6 +12,7 @@ type FormData = {
 
 const Register = () => {
     const navigate = useNavigate();
+    const [error, setError] = useState<string>('');
 
     const {
         register,
@@ -20,8 +21,36 @@ const Register = () => {
         formState: { errors },
     } = useForm<FormData>();
 
-    const onSubmit = (data: FormData) => {
-        console.log('Registration attempt:', data);
+    const onSubmit = async (data: FormData) => {
+        console.log('Registration data:', data);
+        try {
+            console.log('Attempting to register user...');
+            const response = await fetch('https://dummyjson.com/users/add', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: data.username,
+                    email: data.email,
+                    password: data.password,
+                }),
+            });
+
+            const result = await response.json();
+            console.log('Registration response:', result);
+
+            if (!response.ok) {
+                throw new Error(result.message || 'Registration failed');
+            }
+
+            navigate('/login');
+        } catch (err) {
+            console.error('Error during registration:', err);
+            setError(
+                err instanceof Error
+                    ? err.message
+                    : 'An error occurred during registration'
+            );
+        }
     };
 
     const password = watch('password');
@@ -31,6 +60,7 @@ const Register = () => {
             <div className='auth-paper'>
                 <h1 className='auth-title'>Music Playlist</h1>
                 <h2 className='auth-subtitle'>Create Account</h2>
+                {error && <p className='auth-error'>{error}</p>}
                 <form className='auth-form' onSubmit={handleSubmit(onSubmit)}>
                     <input
                         className='auth-input'

@@ -1,0 +1,100 @@
+.song-search-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 2px solid #1db954;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #23232b;
+    color: white;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #1ed760;
+}
+
+.search-input::placeholder {
+    color: #666;
+}
+
+.loading {
+    text-align: center;
+    color: #1db954;
+    margin: 20px 0;
+}
+
+.error {
+    color: #ff4444;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    background: #2a2a2a;
+    border-radius: 8px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.track-item:hover {
+    transform: translateX(4px);
+    background: #333;
+}
+
+.track-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.track-info {
+    flex: 1;
+}
+
+.track-info h3 {
+    margin: 0 0 4px 0;
+    color: white;
+    font-size: 16px;
+}
+
+.track-info p {
+    margin: 0;
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+.album-name {
+    font-size: 12px !important;
+    color: #666 !important;
+    margin-top: 4px !important;
+}
