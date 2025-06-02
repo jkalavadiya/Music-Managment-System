@@ -61,6 +61,7 @@ const Login = () => {
                         className='auth-input'
                         type='text'
                         placeholder='Email Address'
+                        defaultValue='emilys'
                         {...register('email', {
                             required: 'Email is required',
                         })}
@@ -73,6 +74,7 @@ const Login = () => {
                         className='auth-input'
                         type='password'
                         placeholder='Password'
+                        defaultValue='emilyspass'
                         {...register('password', {
                             required: 'Password is required',
                         })}

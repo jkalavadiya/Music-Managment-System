@@ -7,6 +7,7 @@ import {
     FaPlus,
     FaEdit,
     FaTrash,
+    FaHeadphones,
 } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import PlayerBar from '../../components/PlayerBar/PlayerBar';
@@ -103,9 +104,13 @@ export default function Playlists() {
         <div className='dashboard-layout'>
             <aside className='sidebar'>
                 <nav className='sidebar-nav'>
-                    <Link to='/' className='nav-item'>
+                    <div className='nav-item'>
                         <FaHome className='nav-icon' />
                         <span>Home</span>
+                    </div>
+                    <Link to='/songs' className='nav-item'>
+                        <FaHeadphones className='nav-icon' />
+                        <span>Songs</span>
                     </Link>
                     <Link to='/playlists' className='nav-item active'>
                         <FaMusic className='nav-icon' />
